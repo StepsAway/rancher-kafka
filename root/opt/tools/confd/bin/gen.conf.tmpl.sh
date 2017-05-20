@@ -3,6 +3,7 @@
 KAFKA_HEAP_OPTS=${JVMFLAGS:-"-Xmx1G -Xms1G"}
 KAFKA_ADVERTISE_PORT=${KAFKA_ADVERTISE_PORT:-"9092"}
 KAFKA_DELETE_TOPICS=${KAFKA_DELETE_TOPICS:-"false"}
+KAFKA_DEFAULT_REPLICATION_FACTOR=${KAFKA_DEFAULT_REPLICATION_FACTOR:-"1"}
 KAFKA_LISTENER=${KAFKA_LISTENER:-"PLAINTEXT://0.0.0.0:"${KAFKA_ADVERTISE_PORT}}
 KAFKA_LOG_DIRS=${KAFKA_LOG_DIRS:-${SERVICE_HOME}"/logs"}
 KAFKA_LOG_FILE=${KAFKA_LOG_FILE:-${KAFKA_LOG_DIRS}"/kafkaServer.out"}
@@ -48,6 +49,7 @@ log.dirs=${KAFKA_LOG_DIRS}
 num.partitions=${KAFKA_NUM_PARTITIONS}
 num.recovery.threads.per.data.dir=1
 delete.topic.enable=${KAFKA_DELETE_TOPICS}
+default.replication.factor=${KAFKA_DEFAULT_REPLICATION_FACTOR:-"1"}
 ############################# Log Flush Policy #############################
 #log.flush.interval.messages=10000
 #log.flush.interval.ms=1000
